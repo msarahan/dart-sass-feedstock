@@ -12,7 +12,7 @@ source:
 build:
   number: 1
   binary_relocation: False
- missing_dso_whitelist:
+  missing_dso_whitelist:
     # normal linux stuff that would go away if we had libgcc-ng in the run deps
     - '*/ld-linux.so.2'
     - '*/lib64/ld-linux-x86-64.so.2'
