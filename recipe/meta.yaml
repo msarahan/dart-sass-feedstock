@@ -1,5 +1,5 @@
 {% set name = "dart-sass" %}
-{% set version = "1.54.1" %}
+{% set version = "1.54.3" %}
 
 package:
   name: {{ name }}
@@ -7,19 +7,19 @@ package:
 
 source:
   url: https://github.com/sass/dart-sass/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 3c99c43deb01194d7eff2ddbf1d39221004ce7fc185577aa607e0ef66d845cfb
+  sha256: fbfe1590ef63998b62d108b2dd848ea71456e910c50405b0ae7fadc43212472b
 
 build:
   number: 1
   binary_relocation: False
-  missing_dso_whitelist:
+ missing_dso_whitelist:
     # normal linux stuff that would go away if we had libgcc-ng in the run deps
-    - "*/ld-linux.so.2"
-    - "*/lib64/ld-linux-x86-64.so.2"
-    - "*/libpthread.so.0"
-    - "*/libdl.so.2"
-    - "*/libm.so.6"
-    - "*/libc.so.6"
+    - '*/ld-linux.so.2'
+    - '*/lib64/ld-linux-x86-64.so.2'
+    - '*/libpthread.so.0'
+    - '*/libdl.so.2'
+    - '*/libm.so.6'
+    - '*/libc.so.6'
 
 requirements:
   host:
