@@ -25,10 +25,10 @@ build:
 
 requirements:
   host:
-    - dart-sdk   # [unix]
+    - dart-sdk       # [unix and not arm64]
     - nodejs >=18    # [win]
   run:
-    - nodejs     # [win]
+    - nodejs         # [win]
 
 test:
   files:
@@ -40,7 +40,8 @@ about:
   home: https://sass-lang.com/dart-sass
   license: MIT
   license_file:
-    - LICENSE
+    - LICENSE           # [not osx or not arm64]
+    - src/LICENSE       # [osx and arm64]
   summary: Dart implementation of Sass. Sass makes CSS fun again.
 
 extra:
