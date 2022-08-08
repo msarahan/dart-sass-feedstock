@@ -26,7 +26,7 @@ build:
 requirements:
   host:
     - dart-sdk   # [unix]
-    - nodejs     # [win]
+    - nodejs >=18    # [win]
   run:
     - nodejs     # [win]
 
