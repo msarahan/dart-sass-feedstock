@@ -10,8 +10,8 @@ source:
   sha256: fbfe1590ef63998b62d108b2dd848ea71456e910c50405b0ae7fadc43212472b
 
 build:
-  number: 0
-  binary_relocation: false
+  number: 1
+  binary_relocation: False
   missing_dso_whitelist:
     # normal linux stuff that would go away if we had libgcc-ng in the run deps
     - '*/ld-linux.so.2'
