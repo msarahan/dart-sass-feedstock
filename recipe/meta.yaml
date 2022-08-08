@@ -6,10 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/sass/dart-sass/archive/refs/tags/{{ version }}.tar.gz                                     # [not osx or not arm64]
-    sha256: fbfe1590ef63998b62d108b2dd848ea71456e910c50405b0ae7fadc43212472b                                          # [not osx or not arm64]
-  - url: https://github.com/sass/dart-sass/releases/download/{{ version }}/dart-sass-{{ version }}-macos-arm64.tar.gz # [osx and arm64]
-    sha256: 686dc8efa370f050668c87a6a7762f8a6e5e8fbf85c2361d727ce860b3f509df                                          # [osx and arm64]
+  - url: https://github.com/sass/dart-sass/archive/refs/tags/{{ version }}.tar.gz                                      # [not osx or not arm64]
+    sha256: fbfe1590ef63998b62d108b2dd848ea71456e910c50405b0ae7fadc43212472b                                           # [not osx or not arm64]
+  - url: https://github.com/sass/dart-sass/releases/download/{{ version }}/dart-sass-{{ version }}-macos-arm64.tar.gz  # [osx and arm64]
+    sha256: 686dc8efa370f050668c87a6a7762f8a6e5e8fbf85c2361d727ce860b3f509df                                           # [osx and arm64]
 
 build:
   number: 2
@@ -26,7 +26,7 @@ build:
 requirements:
   host:
     - dart-sdk   # [unix]
-    - nodejs     # [win]
+    - nodejs >=18    # [win]
   run:
     - nodejs     # [win]
 
