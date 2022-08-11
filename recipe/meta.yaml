@@ -1,5 +1,5 @@
 {% set name = "dart-sass" %}
-{% set version = "1.54.3" %}
+{% set version = "1.54.4" %}
 
 package:
   name: {{ name }}
@@ -7,28 +7,20 @@ package:
 
 source:
   - url: https://github.com/sass/dart-sass/archive/refs/tags/{{ version }}.tar.gz                                      # [not osx or not arm64]
-    sha256: fbfe1590ef63998b62d108b2dd848ea71456e910c50405b0ae7fadc43212472b                                           # [not osx or not arm64]
+    sha256: 669a52ec200a71141886793a2d98549ba7ac9c3da7479f1b05a0603d51e14cac                                           # [not osx or not arm64]
+  # binary repack for arm64 and windows due to compiling issues
+  - url: https://github.com/sass/dart-sass/releases/download/{{ version }}/dart-sass-{{ version }}-windows-x64.zip     # [win]
+    sha256: 2feab83684e607b91059ca07f9be4601917b089461c0797d4cd680f9bc4cc591   # [win]
   - url: https://github.com/sass/dart-sass/releases/download/{{ version }}/dart-sass-{{ version }}-macos-arm64.tar.gz  # [osx and arm64]
-    sha256: 686dc8efa370f050668c87a6a7762f8a6e5e8fbf85c2361d727ce860b3f509df                                           # [osx and arm64]
+    sha256: 38a68a04224cd0b107a405317caae29aeac43ff884acdf12ce36630ad6991b3e                                           # [osx and arm64]
 
 build:
-  number: 2
+  number: 0
   binary_relocation: False
-  missing_dso_whitelist:
-    # normal linux stuff that would go away if we had libgcc-ng in the run deps
-    - '*/ld-linux.so.2'
-    - '*/lib64/ld-linux-x86-64.so.2'
-    - '*/libpthread.so.0'
-    - '*/libdl.so.2'
-    - '*/libm.so.6'
-    - '*/libc.so.6'
 
 requirements:
   host:
     - dart-sdk       # [unix and not arm64]
-    - nodejs >=18    # [win]
-  run:
-    - nodejs         # [win]
 
 test:
   files:
@@ -40,8 +32,8 @@ about:
   home: https://sass-lang.com/dart-sass
   license: MIT
   license_file:
-    - LICENSE           # [not osx or not arm64]
-    - src/LICENSE       # [osx and arm64]
+    - LICENSE           # [unix and not arm64]
+    - src/LICENSE       # [win or (osx and arm64)]
   summary: Dart implementation of Sass. Sass makes CSS fun again.
 
 extra:
