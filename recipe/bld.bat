@@ -19,7 +19,8 @@
 :: Binary repack
 mkdir %LIBRARY_BIN%\src
 COPY sass.bat %LIBRARY_BIN%
-copy src\* %LIBRARY_BIN%\src
+cd src
+copy * %LIBRARY_BIN%\src
 
 :: npm does not provide the cli, so it's not an option
 :: npm i -g sass@%PKG_VERSION%
