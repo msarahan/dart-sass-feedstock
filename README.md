@@ -48,24 +48,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_nodejs14</td>
+              <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=16892&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dart-sass-feedstock?branchName=main&jobName=win&configuration=win_64_nodejs14" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_nodejs16</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=16892&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dart-sass-feedstock?branchName=main&jobName=win&configuration=win_64_nodejs16" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_nodejs18</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=16892&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dart-sass-feedstock?branchName=main&jobName=win&configuration=win_64_nodejs18" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dart-sass-feedstock?branchName=main&jobName=win&configuration=win_64_" alt="variant">
                 </a>
               </td>
             </tr>
