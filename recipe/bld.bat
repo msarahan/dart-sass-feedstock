@@ -15,19 +15,21 @@
 :: dart pub get
 :: dart compile exe bin\sass.dart -o %LIBRARY_BIN%\sass.exe
 
+sass.bat -v
+src\dart.exe -v
 
-ECHO "bld.bat: Renaming rg.exe, see https://github.com/conda-forge/staged-recipes/issues/17519"
-SETLOCAL ENABLEEXTENSIONS
-IF ERRORLEVEL 1 ECHO "bld.bat: Unable to enable extensions: https://www.robvanderwoude.com/cmdextmsg.php"
-IF DEFINED CI (
-    IF %CI% NEQ "" (
-        move C:\Miniforge\Library\bin\rg.exe C:\Miniconda\Library\bin\rg-desactivate.exe
-    ) ELSE (
-        ECHO "bld.bat: CI is defined, but empty, so we leave rg.exe as is."
-    )
-) ELSE (
-    ECHO "bld.bat: We are not in CI, so we leave rg.exe as is."
-)
+@REM ECHO "bld.bat: Renaming rg.exe, see https://github.com/conda-forge/staged-recipes/issues/17519"
+@REM SETLOCAL ENABLEEXTENSIONS
+@REM IF ERRORLEVEL 1 ECHO "bld.bat: Unable to enable extensions: https://www.robvanderwoude.com/cmdextmsg.php"
+@REM IF DEFINED CI (
+@REM     IF %CI% NEQ "" (
+@REM         move C:\Miniforge\Library\bin\rg.exe C:\Miniconda\Library\bin\rg-desactivate.exe
+@REM     ) ELSE (
+@REM         ECHO "bld.bat: CI is defined, but empty, so we leave rg.exe as is."
+@REM     )
+@REM ) ELSE (
+@REM     ECHO "bld.bat: We are not in CI, so we leave rg.exe as is."
+@REM )
 
 
 :: Binary repack
