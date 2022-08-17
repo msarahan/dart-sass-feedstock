@@ -1,28 +1,4 @@
-:: would be better to build a native binary, but this seems broken.
-:: error looks like this:
-::
-:: (%PREFIX%) %SRC_DIR%>dart compile exe bin\sass.dart -o %PREFIX%\Library\bin\sass.exe
-:: Unhandled exception:
-:: Crash when compiling null,
-:: at character offset null:
-:: Bad state: No element
-:: #0      List.single (dart:core-patch/growable_array.dart:353:22)
-:: #1      ClassBuilderImpl.buildTypeWithBuiltArguments (package:front_end/src/fasta/builder/class_builder.dart:324:44)
-:: #2      ClassBuilderImpl.buildType (package:front_end/src/fasta/builder/class_builder.dart:335:12)
-
-:: may be related to https://github.com/flutter/flutter/issues/92757
-
-:: dart pub get
-:: dart compile exe bin\sass.dart -o %LIBRARY_BIN%\sass.exe
-
-src\dart.exe --version
-call sass.bat --version
-
-:: Binary repack
-mkdir %LIBRARY_BIN%\src
-COPY sass.bat %LIBRARY_BIN%
-cd src
-copy * %LIBRARY_BIN%\src
-
-:: npm does not provide the cli, so it's not an option
-:: npm i -g sass@%PKG_VERSION%
+for /f %%i in ('python -c "import subprocess; out = subprocess.check_output(['dart', '--version']); print(out.decode().split()[3])"') do set DART_VERSION=%%i
+dart pub get
+dart compile exe bin\sass.dart -Dversion=%PKG_VERSION% -Ddart-version=%DART_VERSION% -o %LIBRARY_BIN%\sass.exe
+:: dart run grinder pkg-standalone-windows-x64
