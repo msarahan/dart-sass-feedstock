@@ -26,7 +26,7 @@ test:
   files:
     - test.sass
   commands:
-    - sass test.sass output.css
+    - sass test.sass output.css  # [unix]
 
 about:
   home: https://sass-lang.com/dart-sass
