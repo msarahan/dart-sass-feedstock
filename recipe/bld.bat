@@ -15,8 +15,8 @@
 :: dart pub get
 :: dart compile exe bin\sass.dart -o %LIBRARY_BIN%\sass.exe
 
-sass.bat -v
-src\dart.exe -v
+src\dart.exe --version
+sass.bat --version
 
 @REM ECHO "bld.bat: Renaming rg.exe, see https://github.com/conda-forge/staged-recipes/issues/17519"
 @REM SETLOCAL ENABLEEXTENSIONS
