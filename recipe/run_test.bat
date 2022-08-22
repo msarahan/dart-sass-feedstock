@@ -1,0 +1,1 @@
+call sass test.sass output.css
