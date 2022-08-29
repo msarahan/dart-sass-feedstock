@@ -8,13 +8,15 @@ package:
 source:
   - url: https://github.com/sass/dart-sass/archive/refs/tags/{{ version }}.tar.gz                                      # [not osx or not arm64]
     sha256: 669a52ec200a71141886793a2d98549ba7ac9c3da7479f1b05a0603d51e14cac                                           # [not osx or not arm64]
-  # binary repack for arm64 and windows due to compiling issues
+  # binary repack for osx-arm64 due to compiling issues
   - url: https://github.com/sass/dart-sass/releases/download/{{ version }}/dart-sass-{{ version }}-macos-arm64.tar.gz  # [osx and arm64]
     sha256: 38a68a04224cd0b107a405317caae29aeac43ff884acdf12ce36630ad6991b3e                                           # [osx and arm64]
 
 build:
   number: 0
   binary_relocation: False
+  # we don't have dart-sdk on ppc64le, so we can't build this.
+  skip: True   # [ppc64le]
 
 requirements:
   host:
@@ -24,7 +26,7 @@ test:
   files:
     - test.sass
   commands:
-    - sass test.sass output.css  # [unix]
+    - sass test.sass output.css
 
 about:
   home: https://sass-lang.com/dart-sass
