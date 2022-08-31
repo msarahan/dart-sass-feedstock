@@ -9,5 +9,5 @@ if [ "$SUBDIR" == "osx-arm64" ]; then
     cp -r src $PREFIX/bin
 else
     dart pub get
-    dart compile exe bin/sass.dart -o $PREFIX/bin/sass
+    dart compile exe bin/sass.dart -Dversion=$PKG_VERSION -o $PREFIX/bin/sass
 fi
